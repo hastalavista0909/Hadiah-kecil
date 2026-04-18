@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Ikaa ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff9ff3 100%);
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Floating Hearts Background */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff1744;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .heart:nth-child(odd) { animation-delay: 1s; }
+        .heart:nth-child(even) { animation-delay: 3s; font-size: 15px; color: #ff69b4; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Big Love Text */
+        .big-love {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            color: #ff1744;
+            text-shadow: 3px 3px 0px #c44569, 6px 6px 0px rgba(255,255,255,0.3);
+            z-index: 10;
+            animation: pulse 2s ease-in-out infinite;
+            font-weight: bold;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+        }
+
+        /* Teddy Bear */
+        .teddy {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 250px;
+            z-index: 20;
+            cursor: pointer;
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        .teddy-body {
+            width: 120px;
+            height: 100px;
+            background: #8B4513;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 80px;
+            left: 40px;
+            border: 8px solid #D2691E;
+        }
+
+        .teddy-head {
+            width: 100px;
+            height: 90px;
+            background: #D2691E;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            border: 6px solid #8B4513;
+        }
+
+        .teddy-ears {
+            width: 30px;
+            height: 30px;
+            background: #D2691E;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+        }
+
+        .teddy-ears.left { left: 10px; }
+        .teddy-ears.right { right: 10px; }
+
+        .teddy-eyes {
+            width: 12px;
+            height: 12px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            left: 25px;
+        }
+
+        .teddy-eyes.right { left: 63px; }
+
+        .teddy-nose {
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 52px;
+        }
+
+        .teddy-mouth {
+            width: 20px;
+            height: 10px;
+            border: 3px solid #000;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            top: 60px;
+            left: 45px;
+        }
+
+        .teddy-arms {
+            width: 40px;
+            height: 60px;
+            background: #8B4513;
+            border-radius: 30px;
+            position: absolute;
+            top: 90px;
+        }
+
+        .teddy-arms.left { left: 0; transform: rotate(-20deg); }
+        .teddy-arms.right { right: 0; transform: rotate(20deg); }
+
+        .love-doll {
+            position: absolute;
+            top: 120px;
+            left: 75px;
+            width: 50px;
+            height: 60px;
+            background: #ff1744;
+            border-radius: 50% 50% 40% 40%;
+            animation: wiggle 2s ease-in-out infinite;
+            border: 4px solid #c44569;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            font-size: 24px;
+            animation: balloonFloat 8s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(1) { left: 10%; animation-delay: 0s; color: #ff69b4; }
+        .balloon:nth-child(2) { left: 20%; animation-delay: 2s; color: #ff1744; font-size: 20px; }
+        .balloon:nth-child(3) { right: 20%; animation-delay: 4s; color: #ff9ff3; }
+        .balloon:nth-child(4) { right: 10%; animation-delay: 1s; color: #ff6b9d; font-size: 22px; }
+
+        @keyframes balloonFloat {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+        }
+
+        /* Message Paper */
+        .message {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 350px;
+            height: 120px;
+            background: linear-gradient(145deg, #fff, #f0f0f0);
+            border-radius: 15px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2), inset 2px 2px 5px rgba(255,255,255,0.8);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            color: #c44569;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateX(-50%) scale(0.8) rotateY(90deg);
+            transition: all 1s ease;
+            z-index: 30;
+            cursor: pointer;
+        }
+
+        .message.open {
+            opacity: 1;
+            transform: translateX(-50%) scale(1) rotateY(0deg);
+        }
+
+        .message h2 {
+            color: #ff1744;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Click instruction */
+        .click-hint {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💞</div>
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+
+    <!-- Balloons -->
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+
+    <!-- Big Love Text -->
+    <div class="big-love">LOVE</div>
+
+    <!-- Teddy Bear -->
+    <div class="teddy" onclick="toggleMessage()">
+        <div class="teddy-head">
+            <div class="teddy-ears left"></div>
+            <div class="teddy-ears right"></div>
+            <div class="teddy-eyes"></div>
+            <div class="teddy-eyes right"></div>
+            <div class="teddy-nose"></div>
+            <div class="teddy-mouth"></div>
+        </div>
+        <div class="teddy-body"></div>
+        <div class="teddy-arms left"></div>
+        <div class="teddy-arms right"></div>
+        <div class="love-doll"></div>
+    </div>
+
+    <!-- Message Paper -->
+    <div class="message" id="message">
+        <h2>💌</h2>
+        <div>I love you Ikaa,</div>
+        <div>I made this hoping you like it. 💕</div>
+    </div>
+
+    <!-- Click hint -->
+    <div class="click-hint">Click the teddy bear! 🧸💕</div>
+
+    <script>
+        function toggleMessage() {
+            const message = document.getElementById('message');
+            message.classList.toggle('open');
+            
+            // Add heart burst effect
+            if (message.classList.contains('open')) {
+                createHeartBurst();
+            }
+        }
+
+        function createHeartBurst() {
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💖';
+                    heart.className = 'heart';
+                    heart.style.left = '50%';
+                    heart.style.fontSize = '30px';
+                    heart.style.animationDuration = '2s';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 100);
+            }
+        }
+
+        // Auto-create more floating hearts periodically
+        setInterval(() => {
+            const hearts = ['💖', '💕', '💗', '💓', '💞'];
+            const heart = document.createElement('div');
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 8000);
+        }, 2000);
+    </script>
+</body>
+</html>
